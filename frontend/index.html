@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime Speech to Text</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem auto;
+        max-width: 900px;
+        line-height: 1.4;
+      }
+
+      button {
+        margin-right: 1rem;
+        padding: 0.65rem 1.25rem;
+      }
+
+      #status {
+        margin-top: 1rem;
+        font-weight: 700;
+      }
+
+      #transcript {
+        margin-top: 1rem;
+        min-height: 140px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0.75rem;
+        background: #fafafa;
+        white-space: pre-wrap;
+      }
+
+      #stats {
+        margin-top: 1rem;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Realtime Speech to Text (WebSocket)</h1>
+    <p>
+      Click <strong>Start</strong>, grant microphone access, and speak.
+      The browser streams PCM chunks to the backend over WebSocket.
+    </p>
+
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+
+    <div id="status">Status: idle</div>
+    <div id="stats">RMS: -</div>
+    <div id="transcript"></div>
+
+    <script src="/static/main.js"></script>
+  </body>
+</html>
